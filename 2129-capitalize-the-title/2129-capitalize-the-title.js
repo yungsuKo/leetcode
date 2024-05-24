@@ -7,14 +7,9 @@ var capitalizeTitle = function(title) {
     let i = 0;
     for(let split of splitTitle){
         if(split.length <= 2){
-            splitTitle[i]=split.split('').map((c, j) => {
-                return c.toLowerCase()
-            }).join('');
+            splitTitle[i]=split.toLowerCase();
         }else{
-            splitTitle[i]=split.split('').map((c, j) => {
-                if(j == 0) {return c.toUpperCase()}
-                else {return c.toLowerCase()}
-            }).join('');
+            splitTitle[i]=split.slice(0,1).toUpperCase() + split.slice(1).toLowerCase()
         }
         i++;
     }
