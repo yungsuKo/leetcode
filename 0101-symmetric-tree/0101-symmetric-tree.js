@@ -13,8 +13,8 @@
 var isSymmetric = function(root) {
     function check(left, right){
         if(!left && !right) return true;
-        if(!left && right) return false;
-        if(left && !right) return false;
+        if(left == null) return false;
+        if(right == null) return false;
         if(left.val !== right.val) return false;
         return check(left.left, right.right) && check(left.right, right.left) 
     }
